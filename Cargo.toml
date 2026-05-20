@@ -1,0 +1,26 @@
+[package]
+name = "ztop"
+version = "0.3.15"
+edition = "2021"
+rust-version = "1.75"
+authors = ["Andrea Bodei <info@andreabodei.com>"]
+description = "A simple, GPU-aware Linux system monitor"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+crossterm = "0.28"
+ratatui = "0.29"
+sysinfo = "0.32"
+
+# NVML is Linux-only and optional at runtime — if the library fails to load,
+# we degrade gracefully. The Rust dep itself is always compiled in on Linux.
+[target.'cfg(target_os = "linux")'.dependencies]
+nvml-wrapper = "0.10"
+nvml-wrapper-sys = "0.8"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
