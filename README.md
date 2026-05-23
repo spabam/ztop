@@ -39,10 +39,10 @@ CPU + RAM + GPU + VRAM + temperature + top consuming commands
 Conceptual layout (the actual render adds horizontal bars and a footer with live sort/pause state — see [`SPEC.md`](./SPEC.md#3-layout--width-validation) for the verified 80-column layout):
 
 ```text
-┌──────────────────────────── ZTOP ────────────────────────────┐
+┌──────────────────────────── ZTOP ───────────────────────────────┐
 │ Refresh: 1s        Host: workstation-01        Uptime: 04:21:33 │
 ├─────────────────────────────────────────────────────────────────┤
-│ 13th Gen Intel(R) Core(TM) i9-13980HX                          │
+│ 13th Gen Intel(R) Core(TM) i9-13980HX                           │
 │ CPU      42%   Temp: 68°C                                       │
 │ Cores    0: 31%  1: 46%  2: 77%  3: 22%                         │
 │          4: 55%  5: 39%  6: 81%  7: 18%                         │
@@ -55,7 +55,7 @@ Conceptual layout (the actual render adds horizontal bars and a footer with live
 │ VRAM     9.2 / 12.0 GB     76%                                  │
 ├──────────────────── Top 10 Consuming Commands ──────────────────┤
 │ PID     USER       CPU%   RAM%   GPU%   VRAM     COMMAND        │
-│ 8123    giaime     188    12.1   65     7.8GB    python train.py │
+│ 8123    giaime     188    12.1   65     7.8GB    python train.py│
 │ 2411    root       24     4.3    0      0MB      Xorg           │
 │ 9931    giaime     18     2.1    4      600MB    blender        │
 └─────────────────────────────────────────────────────────────────┘
